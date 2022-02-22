@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add authors to books</title>
+</head>
+<body>
+    <h2>Title: {{book.title}}</h2>
+    <label for="author">Favorited by:</label>
+    <table>
+        <tbody>
+            {% for author in book.authors %}
+                <tr>
+                <td>{{author.name}}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2> Add Book's Favorite </h2>
+    <label for="author">Author:</label>
+    <form action="/book/{{book.id}}" method = 'Post'>
+        <select name = "author_id">
+            {% for row in all_authors %}
+            <option type = "text" value = {{row.id}}>{{row.name}}</option>
+            {% endfor %}<br>
+        </select>
+        <input type="submit" value = 'Add'>
+    </form>
+    <a href="/">Home</a>
+</body>
+</html>

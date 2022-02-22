@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit</title>
+</head>
+<body>
+    <h1>Edit Recipe</h1>
+    <form action="/recipes/updated" method = 'post'>
+        {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+            {% if messages %}                            <!-- check if there are any messages -->
+                {% for message in messages %}            <!-- loop through the messages -->
+                    <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+        <input type="hidden" name="id" value = {{edit_recipe.id}}>
+        <label for="name">Name:</label>
+        <input type="text" name = 'name' value = {{edit_recipe.name}}>
+        <label for="date_made">Date Made On:</label>
+        <input type="date" name = 'date_made' value = {{edit_recipe.date_made}}>
+        <label for="description">Description</label>
+        <textarea name="description" id="description" cols="30" rows="10" value = {{edit_recipe.description}}>{{edit_recipe.description}}</textarea>
+        <label for="under_30">Under 30 minutes?</label>
+        <input type="radio" name="under_30" value = 'Yes'value = 'Yes'>
+        <label for="Yes"> Yes</label>
+        <input type="radio" name="under_30" value = 'No' value = 'No'>
+        <label for="No"> No</label>
+        <label for="">Instructions</label>
+        <textarea name="instructions" id="instructions" cols="30" rows="10" value = {{edit_recipe.instructions}}>{{edit_recipe.instructions}}</textarea>
+        <input type="submit" value = 'Create'>
+    </form>
+</body>
+</html>

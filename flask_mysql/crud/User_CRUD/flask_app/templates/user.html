@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Info</title>
+</head>
+<body>
+    <h1> User {{one_user.id}}</h1><a href="/users">Home</a><br>
+    <table>
+        <tr>Full Name: {{one_user.first_name}}  {{one_user.last_name}}</tr><br>
+        <tr>Email:  {{one_user.email}}</tr><br>
+        <tr>Created On: {{one_user.created_at}}</tr><br>
+        <tr>Last Updated On: {{one_user.updated_at}}</tr><br>
+    </table>
+    <a href="/users/{{one_user.id}}/edit">Edit</a>
+    <a href="">Delete</a>
+</body>
+</html>

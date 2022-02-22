@@ -1,0 +1,39 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 INSERT INTO authors(name, created_at, updated_at)VALUES('Jane Austen', NOW(), NOW());\
+INSERT INTO authors(name, created_at, updated_at)VALUES('Emily Dickinson', NOW(), NOW());\
+INSERT INTO authors(name, created_at, updated_at)VALUES('Fyodor Dostoevsky', NOW(), NOW());\
+INSERT INTO authors(name, created_at, updated_at)VALUES('William Shakespeare', NOW(), NOW());\
+INSERT INTO authors(name, created_at, updated_at)VALUES('Lau Tzu', NOW(), NOW());\
+INSERT INTO books(title, num_of_pages, created_at, updated_at)VALUES('C Sharp', 200, NOW(), NOW());\
+INSERT INTO books(title, num_of_pages, created_at, updated_at)VALUES('JAVA', 210, NOW(), NOW());\
+INSERT INTO books(title, num_of_pages, created_at, updated_at)VALUES('Python', 220, NOW(), NOW());\
+INSERT INTO books(title, num_of_pages, created_at, updated_at)VALUES('PHP', 230, NOW(), NOW());\
+INSERT INTO books(title, num_of_pages, created_at, updated_at)VALUES('Ruby', 240, NOW(), NOW());\
+UPDATE books SET title='C#' WHERE id=1;\
+UPDATE authors SET name='Bill Shakespeare' WHERE id=4;\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 1, 1);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 1, 2);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 2, 1);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 2, 2);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 2, 3);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 3, 1);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 3, 2);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 3, 3);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 3, 4);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 4, 1);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 4, 2);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 4, 3);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 4, 4);\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 4, 5);\
+SELECT name FROM authors JOIN favorites ON authors.id = favorites.author_id WHERE favorites.book_id = 3;\
+DELETE FROM favorites WHERE author_id = 2 AND book_id = 3;\
+INSERT INTO authors(name, created_at, updated_at)VALUES('Manish Punjabi', NOW(), NOW());\
+INSERT INTO favorites(created_at, updated_at, author_id, book_id)VALUES(NOW(), NOW(), 5, 2);\
+SELECT title FROM books JOIN favorites ON books.id = favorites.book_id WHERE favorites.author_id = 3;\
+SELECT name FROM authors JOIN favorites ON authors.id = favorites.author_id WHERE favorites.book_id = 5;}

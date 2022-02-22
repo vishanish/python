@@ -1,0 +1,28 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2636
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 INSERT INTO dojos(name, created_at, updated_at) VALUES('Arlington', NOW(), NOW());\
+INSERT INTO dojos(name, created_at, updated_at) VALUES('Berkeley', NOW(), NOW());\
+INSERT INTO dojos(name, created_at, updated_at) VALUES('San Jose', NOW(), NOW());\
+DELETE FROM dojos WHERE id =1;\
+DELETE FROM dojos WHERE id =2;\
+DELETE FROM dojos WHERE id =3;\
+INSERT INTO dojos(name, created_at, updated_at) VALUES('Orange County', NOW(), NOW());\
+INSERT INTO dojos(name, created_at, updated_at) VALUES('Dallas', NOW(), NOW());\
+INSERT INTO dojos(name, created_at, updated_at) VALUES('San Francisco', NOW(), NOW());\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Sean', 'Avery', 20, NOW(), NOW(), 4);\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Lauren', 'Odalen', 22, NOW(), NOW(), 4);\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Danniel', 'Cervantes', 25, NOW(), NOW(),4);\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Ethan', 'Lieberman', 23, NOW(), NOW(),5);\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Kenneth', 'Martin', 24, NOW(), NOW(),5);\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Victoria', 'Girl', 22, NOW(), NOW(),5);\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Manish', 'Punjabi', 28, NOW(), NOW(),6);\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Cody', 'Guy', 30, NOW(), NOW(),6);\
+INSERT INTO ninjas(first_name, last_name, age, created_at, uodated_at, dojo_id) VALUES('Him', 'Man', 29, NOW(), NOW(),6);\
+SELECT * FROM ninjas WHERE dojo_id=4;\
+SELECT * FROM ninjas WHERE dojo_id=5;\
+SELECT * FROM ninjas ORDER BY id DESC LIMIT 1;}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkerboar</title>
+    <link rel="stylesheet" type = "text/css" href="{{url_for('static', filename='style.css')}}">
+    <style>
+        .color1{
+            background-color: {{color1}};
+        }
+        .color2{
+            background-color: {{color2}};
+        }
+    </style>
+</head>
+<body>
+    {% for y in range(columns) %}
+        <div class = 'row'>
+            {% for x in range(rows) %}
+                <div class ='box color1'></div>
+                <div class ='box color2'></div>
+            {% endfor %}
+        </div>
+        <div class = 'row'>
+            {% for x in range(rows) %}
+                <div class ='box color2'></div>
+                <div class ='box color1'></div>
+            {% endfor %}
+        </div>
+    {% endfor %}
+</body>
+</html>

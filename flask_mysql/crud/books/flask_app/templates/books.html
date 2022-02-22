@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add books</title>
+</head>
+<body>
+    <h2>New Books</h2>
+    <form action="/books_add" method = 'POST'>
+        <label for="title">Title</label>
+        <input type="text" name = "title">
+        <label for="num_of_pages">Number of pages:</label>
+        <input type="text" name = "num_of_pages">
+        <input type="submit"value = "Create">
+    </form>
+    <h2>All Books</h2>
+    <table>
+        <tbody>
+            {% for book in books %}
+            <tr>
+                <td><a href="/books/{{book.id}}">{{book.title}}</a></td>
+            </tr>
+            {% endfor%}
+        </tbody>
+    </table>
+    <a href="/authors">Home</a>
+</body>
+</html>
