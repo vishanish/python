@@ -1,6 +1,6 @@
 from flask_app import app
 from flask import render_template, request, redirect, session
-from flask_app.models.model_login import Login
+from flask_app.models.model_user import User
 
 
 @app.route('/')
@@ -9,9 +9,9 @@ def index():
 
 @app.route('/add', methods = ['POST'])
 def add_user():
-    if not Login.validate_register(request.form):
+    if not User.validate_register(request.form):
         return redirect('/')
-    user_id = Login.save_reg(request.form)
+    user_id = User.save_reg(request.form)
     session ['user_id'] = user_id
     return redirect('/display')
 
@@ -20,21 +20,19 @@ def display():
     data = {
         'id': session['user_id']
     }
-    return render_template('welcome.html', user = Login.users_by_id(data))
+    return render_template('welcome.html', user = User.users_by_id(data))
 
 @app.route('/login', methods = ['POST'])
 def login():
+    if not User.login_validation(request.form):
+        return redirect('/')
     data ={
         'email': request.form['email']
     }
-    user_db = Login.users_by_email(data)
-    
-    if Login.login_validation(request.form):
-        session['email'] = request.form['email']
-        session['user_id'] = user_db.id
-        return redirect('display')
-    else:
-        return redirect('/')
+    user_db = User.users_by_email(data)
+    # session['email'] = request.form['email'] #Not to store anything in session other than id
+    session['user_id'] = user_db.id
+    return redirect('display')
 
 @app.route('/logout')
 def logout():
